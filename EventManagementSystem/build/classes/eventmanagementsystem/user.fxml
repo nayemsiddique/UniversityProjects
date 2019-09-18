@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="625.0" style="-fx-background-color: #c2c4c6;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eventmanagementsystem.userController">
+   <children>
+      <Pane opacity="0.83" prefHeight="390.0" prefWidth="148.0" style="-fx-background-color: #2f3847;">
+         <children>
+            <ImageView fitHeight="38.0" fitWidth="49.0" layoutX="46.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/user2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="userIDLabel" layoutX="37.0" layoutY="87.0" prefHeight="17.0" prefWidth="108.0" text="NAYEM " textFill="#f2eded">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="dashboardButton" layoutX="20.0" layoutY="144.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #2f3847;" text="Dashboard" textFill="#fff7f7">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="26.0" layoutY="170.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #2f3847;" text="Profile" textFill="#fff7f7">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="regButton" layoutX="26.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #2f3847;" text="Register Event" textFill="#fff7f7">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="viewRegEventButton" layoutX="26.0" layoutY="222.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: #2f3847;" text="Registerd Event" textFill="#fff7f7">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Pane layoutX="30.0" layoutY="306.0" prefHeight="70.0" prefWidth="69.0" styleClass="exit" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="32.0" layoutX="16.0" layoutY="16.0" onMouseClicked="#handleuLogoutAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/logout.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <StackPane layoutX="149.0" layoutY="-3.0" prefHeight="390.0" prefWidth="475.0">
+         <children>
+            <Pane fx:id="regEventPane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <TextField fx:id="r_eventNameField" layoutX="14.0" layoutY="61.0" prefHeight="32.0" prefWidth="189.0" promptText="Event Name" />
+                  <DatePicker fx:id="r_eventDatePicker" layoutX="220.0" layoutY="61.0" prefHeight="32.0" prefWidth="189.0" promptText="Event Date" />
+                  <TextField fx:id="r_eventFee" layoutX="14.0" layoutY="99.0" prefHeight="32.0" prefWidth="189.0" promptText="Event Fee" />
+                  <Button layoutX="333.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="37.0" prefWidth="101.0" styleClass="login" stylesheets="@style.css" text="Register" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="214.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleClearAction" prefHeight="37.0" prefWidth="101.0" styleClass="login" stylesheets="@style.css" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="102.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleUserCancleAction" prefHeight="37.0" prefWidth="101.0" styleClass="login" stylesheets="@style.css" text="Cancle" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="24.0" layoutY="22.0" prefHeight="30.0" prefWidth="162.0" text="Register Event" textFill="#282828">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="r_subEventComboBox" layoutX="221.0" layoutY="179.0" onAction="#handleSubEventRegAction" prefHeight="32.0" prefWidth="189.0" promptText="Sub-Event Name" />
+                  <ComboBox fx:id="r_quotaTypeComboBox" layoutX="220.0" layoutY="99.0" onAction="#handleQuotaTypeSelectAction" prefHeight="32.0" prefWidth="189.0" promptText="Category" />
+                  <TextField fx:id="r_QuotaFee" layoutX="221.0" layoutY="138.0" prefHeight="32.0" prefWidth="189.0" promptText="Fee" />
+                  <Button layoutX="414.0" layoutY="177.0" mnemonicParsing="false" onAction="#handleRegSubEventButtonAction" prefHeight="37.0" prefWidth="51.0" styleClass="login" stylesheets="@style.css" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextField fx:id="r_subEventFee" layoutX="220.0" layoutY="216.0" prefHeight="32.0" prefWidth="189.0" promptText="Fee" />
+                  <TextField fx:id="r_SubEventTime" layoutX="220.0" layoutY="257.0" prefHeight="32.0" prefWidth="189.0" promptText="Time" />
+                  <TextField fx:id="r_totalFeeee" layoutX="220.0" layoutY="296.0" prefHeight="32.0" prefWidth="189.0" promptText="Total Fee" />
+                  <Label layoutX="420.0" layoutY="304.0" prefHeight="17.0" prefWidth="38.0" text="Total" />
+                  <ListView fx:id="viewEventList" layoutX="9.0" layoutY="143.0" onMouseClicked="#handleRegEventMouseClickAction" prefHeight="178.0" prefWidth="201.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="viewRegEventPane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <TextField fx:id="r_eventName" editable="false" layoutX="14.0" layoutY="81.0" prefHeight="32.0" prefWidth="189.0" promptText="Event Name" />
+                  <DatePicker fx:id="r_eventDate" editable="false" layoutX="240.0" layoutY="81.0" prefHeight="32.0" prefWidth="189.0" promptText="Event Date" />
+                  <Label layoutX="14.0" layoutY="23.0" prefHeight="30.0" prefWidth="189.0" text="Registered Events" textFill="#282828">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="viewRegEventList" layoutX="14.0" layoutY="175.0" onMouseClicked="#handleRegisterdEventListClickAction" prefHeight="196.0" prefWidth="189.0" />
+                  <DatePicker fx:id="r_endRegDate" editable="false" layoutX="238.0" layoutY="122.0" prefHeight="32.0" prefWidth="189.0" promptText="End Registration" />
+                  <ComboBox fx:id="r_subCombo" layoutX="240.0" layoutY="163.0" onAction="#handleRegComboAction" prefHeight="32.0" prefWidth="189.0" promptText="Sub-Event Name" />
+                  <TextField fx:id="p_subEventFee" editable="false" layoutX="238.0" layoutY="207.0" prefHeight="32.0" prefWidth="189.0" promptText="Sub-Event Fee" />
+                  <TextField fx:id="r_subEventTime" editable="false" layoutX="240.0" layoutY="250.0" prefHeight="32.0" prefWidth="189.0" promptText="Time" />
+                  <TextField fx:id="r_totalFee" editable="false" layoutX="238.0" layoutY="290.0" prefHeight="32.0" prefWidth="189.0" promptText="Total" />
+                  <TextField fx:id="r_quota" editable="false" layoutX="12.0" layoutY="122.0" prefHeight="32.0" prefWidth="189.0" promptText="Quota" />
+               </children>
+            </Pane>
+            <Pane fx:id="profilePane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="pro_firstName" layoutX="13.0" layoutY="82.0" prefHeight="32.0" prefWidth="201.0" promptText="First Name" />
+                  <TextField fx:id="pro_lastName" layoutX="252.0" layoutY="82.0" prefHeight="32.0" prefWidth="213.0" promptText="Last Name" />
+                  <TextField fx:id="pro_userName" editable="false" layoutX="14.0" layoutY="132.0" prefHeight="32.0" prefWidth="201.0" promptText="User Name" />
+                  <TextField fx:id="pro_number" layoutX="253.0" layoutY="132.0" prefHeight="32.0" prefWidth="213.0" promptText="Phone Number" />
+                  <TextField fx:id="pro_email" layoutX="14.0" layoutY="179.0" prefHeight="32.0" prefWidth="201.0" promptText="Email Address" />
+                  <TextField fx:id="pro_gender" editable="false" layoutX="252.0" layoutY="179.0" prefHeight="32.0" prefWidth="213.0" promptText="gender" />
+                  <TextField fx:id="pro_address" layoutX="14.0" layoutY="230.0" prefHeight="32.0" prefWidth="201.0" promptText="Address" />
+                  <DatePicker fx:id="pro_dOfB" layoutX="252.0" layoutY="230.0" prefHeight="32.0" prefWidth="213.0" promptText="Date of Birth" />
+                  <Button layoutX="21.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleChangePasswordAction" prefHeight="37.0" prefWidth="148.0" styleClass="login" stylesheets="@style.css" text="Change Password" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="196.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleChangePinAction" prefHeight="37.0" prefWidth="148.0" styleClass="login" stylesheets="@style.css" text="Change Pin" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="359.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleProfieUpdateAction" prefHeight="37.0" prefWidth="108.0" styleClass="login" stylesheets="@style.css" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="21.0" layoutY="32.0" prefHeight="16.0" prefWidth="92.0" text="Profile">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="userDashPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <Pane layoutX="7.0" layoutY="52.0" prefHeight="111.0" prefWidth="148.0" style="-fx-background-color: #edeeef; -fx-background-radius: 5px;">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="32.0" layoutX="58.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/total_event.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="34.0" layoutY="46.0" prefHeight="20.0" prefWidth="101.0" text="TOTAL EVENT" textFill="#777e80">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalEventLabel" layoutX="56.0" layoutY="66.0" prefHeight="28.0" prefWidth="69.0" text="2000" textFill="#f46b95">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="164.0" layoutY="52.0" prefHeight="111.0" prefWidth="148.0" style="-fx-background-color: #edeeef; -fx-background-radius: 5px;">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="32.0" layoutX="58.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/active_event.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="40.0" layoutY="46.0" prefHeight="20.0" prefWidth="101.0" text="ACTIVE EVENT" textFill="#777e80">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TotalActiveEventLable" layoutX="65.0" layoutY="66.0" prefHeight="28.0" prefWidth="69.0" text="2000" textFill="#8a7aab">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="24.0" layoutY="176.0" prefHeight="206.0" prefWidth="432.0" style="-fx-background-color: #edeeef; -fx-background-radius: 5px;">
+                     <children>
+                        <PieChart fx:id="pie" layoutX="3.0" layoutY="-3.0" prefHeight="206.0" prefWidth="424.0" />
+                     </children></Pane>
+                  <Pane layoutX="320.0" layoutY="52.0" prefHeight="111.0" prefWidth="148.0" style="-fx-background-color: #edeeef; -fx-background-radius: 5px;">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="55.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/reg_event.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="17.0" layoutY="46.0" prefHeight="20.0" prefWidth="140.0" text="REGISTERED EVENT" textFill="#777e80">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="regEventLabel" layoutX="53.0" layoutY="66.0" prefHeight="28.0" prefWidth="69.0" text="2000" textFill="#3abbe5">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="changePassPane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <Button layoutX="247.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleChangepAction" prefHeight="37.0" prefWidth="108.0" styleClass="login" stylesheets="@style.css" text="Change" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="cp_currentPass" accessibleRole="PASSWORD_FIELD" layoutX="130.0" layoutY="99.0" prefHeight="32.0" prefWidth="233.0" promptText="Current Password" />
+                  <TextField fx:id="cp_newPassword" layoutX="130.0" layoutY="139.0" prefHeight="32.0" prefWidth="233.0" promptText="New Password" />
+                  <TextField fx:id="cp_ConfirmPassword" layoutX="130.0" layoutY="179.0" prefHeight="32.0" prefWidth="233.0" promptText="Confirm Password" />
+                  <Button layoutX="123.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleChangePassCancleAction" prefHeight="37.0" prefWidth="108.0" styleClass="login" stylesheets="@style.css" text="Cancle" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="22.0" layoutY="43.0" prefHeight="21.0" prefWidth="189.0" text="Change Password">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="changePinPane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <Button layoutX="256.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleChangePinChangeAction" prefHeight="37.0" prefWidth="108.0" styleClass="login" stylesheets="@style.css" text="Change" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="c_curPin" layoutX="130.0" layoutY="121.0" prefHeight="32.0" prefWidth="233.0" promptText="Current Pin" />
+                  <TextField fx:id="c_newPin" layoutX="131.0" layoutY="163.0" prefHeight="32.0" prefWidth="233.0" promptText="New Pin" />
+                  <Button layoutX="121.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleCancleChangePinAction" prefHeight="37.0" prefWidth="108.0" styleClass="login" stylesheets="@style.css" text="Cancle" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="c_conPin" layoutX="130.0" layoutY="202.0" prefHeight="32.0" prefWidth="233.0" promptText="Confirm Pin" />
+                  <Label layoutX="23.0" layoutY="46.0" prefHeight="32.0" prefWidth="134.0" text="Change Pin">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

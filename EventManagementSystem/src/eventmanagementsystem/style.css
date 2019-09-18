@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 30, 2018, 10:44:43 AM
+    Author     : nayem
+*/
+.login,
+.create{
+    -fx-background-color:#6ed9a0;
+    
+}
+
+.login:hover,
+.create:hover{
+    -fx-background-color:#449f6e;
+    -fx-cursor:hand;
+    
+}
+.user{
+    -fx-border-radius:20px;
+}
+.exit:hover{
+    -fx-background-color:#449f6e;
+    -fx-border-radius: 50px;
+}
+.hr{
+    -fx-arc-width:0px;
+    -fx-arc-height: 0px;
+    -fx-border-width:0px;
+    -fx-border-radius: 0px;
+    -fx-border-color: #9c9494;
+}
+
+
+/*if(eventName.equals(" ") || eventName.isEmpty() || eventDate.equals(" ") || eventDate.isEqual(null) || startReg.equals(" ")
+                    || startReg.isEqual(null) || endReg.equals(" ") || endReg.isEqual(null) || eventCode.isEmpty() || eventCode.equals(" ") ||
+                    A_eventFee.getText().equals("") || A_eventFee.getText().isEmpty()){*/

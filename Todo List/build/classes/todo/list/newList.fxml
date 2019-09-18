@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="600.0" style="-fx-background-color: #e5e3e3;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="todo.list.NewListController">
+   <children>
+      <ImageView fitHeight="235.0" fitWidth="338.0" layoutX="245.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.2;">
+         <image>
+            <Image url="@images/todo_root.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="146.0" orientation="VERTICAL" prefHeight="382.0" prefWidth="5.0" />
+      <Pane layoutX="-17.0" layoutY="-3.0" prefHeight="390.0" prefWidth="163.0" style="-fx-background-color: #36394B;">
+         <children>
+            <Label layoutX="36.0" layoutY="49.0" text="Todo List" textFill="#f5f2f2">
+               <font>
+                  <Font name="Arial Narrow" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="14.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleBackToDashboardAction" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: #36394B;" text="Dashboard" textFill="#978f8f">
+               <font>
+                  <Font name="Arial Narrow Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="50.0" layoutY="177.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="92.0" style="-fx-background-color: #36394B;" text="New List" textFill="#eeeeee">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="38.0" layoutY="214.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="104.0" style="-fx-background-color: #36394B;" text="Edit List" textFill="#b9b1b1">
+               <font>
+                  <Font name="Arial Narrow" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="29.0" fitWidth="23.0" layoutX="27.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/todo_clogo_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="23.0" layoutX="27.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/todo_clogo_2.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="29.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleAboutUsAction" prefHeight="37.0" prefWidth="120.0" style="-fx-background-color: #36394B; -fx-border-color: #fff;" text=" About Us" textFill="WHITE">
+               <font>
+                  <Font name="Arial Narrow" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></Pane>
+      <Label layoutX="160.0" layoutY="7.0" onMouseClicked="#handleBackToDashboardAction2" prefHeight="32.0" prefWidth="15.0" text="&lt;" textFill="#6f6e6e">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="178.0" layoutY="7.0" onMouseClicked="#handleBackToDashboardAction" prefHeight="32.0" prefWidth="142.0" text=" Back to Dashboard" textFill="#6f6e6e">
+         <font>
+            <Font name="Arial Narrow" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <DatePicker fx:id="saveDate" layoutX="155.0" layoutY="49.0" onMouseClicked="#wrongClearDate" prefHeight="32.0" prefWidth="355.0" promptText="Enter date" style="-fx-background-color: #e5e3e3; -fx-border-color: #e5e3e3;" />
+      <ScrollPane layoutX="152.0" layoutY="198.0" prefHeight="136.0" prefWidth="210.0" style="-fx-border-color: #e5e3e3;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="204.0" style="-fx-background-color: #e5e3e3; -fx-border-color: #e5e3e3;">
+               <children>
+                  <VBox fx:id="newTodoListVboxCheckBox" layoutX="6.0" layoutY="-1.0" prefHeight="136.0" prefWidth="201.0" spacing="5.0" style="-fx-background-color: #e5e3e3; -fx-border-color: #e5e3e3;">
+                     <padding>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                     </padding></VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <ScrollPane layoutX="373.0" layoutY="198.0" prefHeight="136.0" prefWidth="210.0" style="-fx-border-color: #e5e3e3;">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="206.0" style="-fx-background-color: #e5e3e3;">
+               <children>
+                  <VBox fx:id="newCompletedListVboxCheckBox" layoutX="9.0" layoutY="-1.0" prefHeight="136.0" prefWidth="198.0" spacing="5.0" style="-fx-background-color: #e5e3e3;">
+                     <padding>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                     </padding></VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Label fx:id="newCompletedCount" layoutX="424.0" layoutY="174.0" textFill="#5b5656" />
+      <TextField fx:id="saveTitle" layoutX="155.0" layoutY="94.0" onMouseClicked="#handleWrongClearAction" prefHeight="29.0" prefWidth="355.0" promptText="Enter Title" />
+      <TextField fx:id="addTodoListField" layoutX="155.0" layoutY="133.0" onAction="#handleAddNewTodoListAction" onMouseClicked="#worngClearTodo" prefHeight="29.0" prefWidth="355.0" promptText="Add Todo Items" />
+      <Label fx:id="newTodoCount" layoutX="204.0" layoutY="174.0" textFill="#5b5656" />
+      <Button layoutX="459.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleResetAction" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #7a7c7f;" text="Reset" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="526.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleSaveAction" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #7a7c7f;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="394.0" layoutY="342.0" mnemonicParsing="false" onAction="#handleCancleAction" prefHeight="29.0" prefWidth="60.0" style="-fx-background-color: #7a7c7f;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="wrongDate" layoutX="519.0" layoutY="56.0" textFill="#fa0a0a" />
+      <Label fx:id="wrongTitle" layoutX="519.0" layoutY="100.0" textFill="#fa0a0a" />
+      <Label fx:id="wrongTodo" layoutX="519.0" layoutY="139.0" textFill="#fa0a0a" />
+      <Label fx:id="wrongOperationField" layoutX="408.0" layoutY="174.0" textFill="#ff0900">
+         <font>
+            <Font name="Arial Narrow Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

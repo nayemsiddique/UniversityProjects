@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="600.0" style="-fx-background-color: #e5e3e3;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="todo.list.RootController">
+   <children>
+      <ImageView fitHeight="235.0" fitWidth="338.0" layoutX="243.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.2;">
+         <image>
+            <Image url="@images/todo_root.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="146.0" orientation="VERTICAL" prefHeight="382.0" prefWidth="5.0" />
+      <Pane layoutX="-17.0" layoutY="-3.0" prefHeight="390.0" prefWidth="163.0" style="-fx-background-color: #36394B;">
+         <children>
+            <Label layoutX="34.0" layoutY="48.0" text="Todo List" textFill="#f5f2f2">
+               <font>
+                  <Font name="Arial Narrow" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="14.0" layoutY="140.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: #36394B;" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="Arial Narrow Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </Button>
+            <Button layoutX="39.0" layoutY="177.0" mnemonicParsing="false" onAction="#handleNewListAction" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #36394B;" text="New List" textFill="#b9b1b1">
+               <font>
+                  <Font name="KacstArt" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="37.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleEditAction" prefHeight="37.0" prefWidth="104.0" style="-fx-background-color: #36394B;" text="Edit List" textFill="#b9b1b1">
+               <font>
+                  <Font name="KacstArt" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="29.0" fitWidth="23.0" layoutX="27.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/todo_clogo_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="23.0" layoutX="27.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/todo_clogo_2.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="29.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleAboutUsAction" prefHeight="37.0" prefWidth="120.0" style="-fx-background-color: #36394B; -fx-border-color: #fff;" text="About Us" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></Pane>
+      <ListView fx:id="todoTitleListView" blendMode="DARKEN" layoutX="165.0" layoutY="20.0" onMouseClicked="#handleTitleListViewMouseAction" prefHeight="294.0" prefWidth="431.0" style="-fx-border-color: #e5e3e3; -fx-background-color: #e5e3e3;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ListView>
+      <ImageView fitHeight="51.0" fitWidth="62.0" layoutX="513.0" layoutY="314.0" onMouseClicked="#handleNewListMouseAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/add_new.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
